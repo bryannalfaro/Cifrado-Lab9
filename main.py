@@ -13,13 +13,15 @@ while option !=4:
 
     if option == 2:
         m = input('Ingrese mensaje: ')
-        enc = encriptar(a[0],m)
+        llavePublica = input('Ingrese llave publica: ')
+        enc = encriptar(llavePublica,m)
 
         print('Encriptado: ',enc)
         menu()
 
     if option == 3:
         d = input('Ingrese mensaje encriptado: ')
-        dec = desencriptar(a[1],d)
+        llavePrivada = input('Ingrese llave privada: ')
+        dec = desencriptar(llavePrivada,d)
         print('Decriptado: ',dec)
         menu()
