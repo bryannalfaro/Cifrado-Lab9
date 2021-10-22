@@ -95,11 +95,14 @@ def encriptar(pk, mensaje):
         m = ord(i)
 
         llavePMensaje += str(pow(m,int(po[0]),int(po[1]))) + " "
-    return llavePMensaje
+    text = str(llavePMensaje).encode('ascii')
+    encoded = base64.b64encode(text).decode()
+    return encoded
 
 #Desencriptacion utilizando la formula : m = c^d%N
-def desencriptar(prk,encriptado):
+def desencriptar(prk,encriptadoM):
     po = base64.b64decode(prk).decode('ascii').split('.')
+    encriptado = base64.b64decode(encriptadoM).decode('ascii')
     mensajeDesencriptado = ""
 
     partes = encriptado.split()
