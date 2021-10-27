@@ -93,8 +93,8 @@ def encriptar(pk, mensaje):
 
     for i in mensaje:
         m = ord(i)
-
         llavePMensaje += str(pow(m,int(po[0]),int(po[1]))) + " "
+
     text = str(llavePMensaje).encode('ascii')
     encoded = base64.b64encode(text).decode()
     return encoded
